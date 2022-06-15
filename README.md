@@ -23,7 +23,8 @@ docker run --name espocrm_utils-instance \
 
 Requires the following environment variables:
 
-* `ESPOCRM_BASE_URL` - base URL to the EspoCRM instance. Used for connecting to the API and generating links.
+* `ESPOCRM_BASE_URL` - base URL to the EspoCRM instance. Used for connecting to the API.
+* `ESPOCRM_DISP_URL` - (optional) base URL to use for generating links
 * `ESPOCRM_API_KEY` - the [EspoCRM API key](https://docs.espocrm.com/development/api/#authentication-by-api-key).
 * `REMINDER_FROM_EMAIL` - from e-mail address to use for the reminder e-mail. Should be the sender e-mail address configured for the system in EspoCRM.
 * `REMINDER_TO_EMAIL` - where to send the reminder e-mail.

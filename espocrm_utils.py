@@ -15,6 +15,7 @@ import sys
 from typing import Any, List, Dict
 
 BASE_URL = os.environ["ESPOCRM_BASE_URL"]
+DISP_URL = os.environ.get("ESPOCRM_DISP_URL", BASE_URL)
 API_KEY = os.environ["ESPOCRM_API_KEY"]
 
 REMINDER_FROM_EMAIL = os.environ["ESPOCRM_REMINDER_FROM"]
@@ -32,7 +33,7 @@ class PersonInfo:
 
     @property
     def url(self) -> str:
-        return BASE_URL + f"/#{self.contactType}/view/{self.idStr}"
+        return DISP_URL + f"/#{self.contactType}/view/{self.idStr}"
 
     def to_line(self) -> str:
 
