@@ -229,7 +229,7 @@ EXAMPLE_INGESTED_EMAIL = IngestedEmail(
     body="My Body",
 )
 
-def register_email(eml: IngestedEmail) -> None:
+def register_email(eml: IngestedEmail) -> bool:
     endpoint = "/api/v1/Email"
 
     r = requests.post(BASE_URL + endpoint,
@@ -262,3 +262,4 @@ def register_email(eml: IngestedEmail) -> None:
         },
     )
     print(f"send_email DEBUG: {r}")
+    return r.status_code == 200

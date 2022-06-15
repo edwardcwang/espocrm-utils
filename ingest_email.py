@@ -17,8 +17,12 @@ def handle_data(data: str) -> bool:
         e = IngestedEmail.from_str(data)
         logging.info("handle_data: logging " + str(e))
         if REGISTER_EMAIL:
-            register_email(e)
-        return True
+            reg_result = register_email(e)
+            if not reg_result:
+                logging.info("handle_data: failed to register")
+            return reg_result
+        else:
+            return True
     except Exception as e:
         logging.info("handle_data: got exception " + str(e))
         return False
