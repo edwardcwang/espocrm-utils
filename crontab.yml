@@ -1,0 +1,9 @@
+jobs:
+  - name: echo
+    command: echo "Still alive"
+    shell: /bin/sh
+    schedule: "0 */12 * * *"
+  - name: reminders
+    command: /opt/reminders.py
+    # Once a day
+    schedule: "0 5 * * *"
